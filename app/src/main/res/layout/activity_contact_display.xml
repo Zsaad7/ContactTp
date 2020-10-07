@@ -8,7 +8,6 @@
     tools:ignore="ExtraText"
     >
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -29,13 +28,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorGuidline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -55,7 +55,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="start"
-        app:constraint_referenced_ids="textView2,textView3"
+        app:constraint_referenced_ids="textView2"
+        tools:layout_editor_absoluteX="32dp" />
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="textView2,nameShow"
+        tools:layout_editor_absoluteX="32dp" />
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="textView3,numberShow"
         tools:layout_editor_absoluteX="32dp" />
 
     <TextView
@@ -87,10 +101,10 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/numberShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0752921710"
+        android:text="07529"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +115,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/nameShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bugdroid"
@@ -113,6 +127,18 @@
         app:layout_constraintTop_toTopOf="@+id/guideline"
         app:layout_constraintVertical_bias="0.109"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnEDIT"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Edit Contact"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.976" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
